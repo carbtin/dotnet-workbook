@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3>Page 70 in Book</h3>
+
+<ul>
+    @foreach (string s in Model)
+    {
+        <li>@s</li>
+
+    }
+</ul>
