@@ -1,5 +1,5 @@
---temp-output:C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\obj\Debug\netcoreapp1.0\
---out:C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\bin\Debug\netcoreapp1.0\MySchool.dll
+--temp-output:C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\bin\Debug\netcoreapp1.0\MySchool.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -229,38 +229,38 @@
 --reference:C:\Users\Curt Arbtin\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Curt Arbtin\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Curt Arbtin\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\obj\Debug\netcoreapp1.0\MySchooldotnet-compile.deps.json",MySchool.deps.json
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Program.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Startup.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Controllers\AccountController.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Controllers\HomeController.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Controllers\ManageController.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Controllers\StudentController.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Data\ApplicationDbContext.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Data\Migrations\00000000000000_CreateIdentitySchema.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Data\Migrations\ApplicationDbContextModelSnapshot.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AcedemicClass.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ApplicationUser.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ClassLevel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\Grade.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\Student.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AccountViewModels\ForgotPasswordViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AccountViewModels\LoginViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AccountViewModels\RegisterViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AccountViewModels\ResetPasswordViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AccountViewModels\SendCodeViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\AccountViewModels\VerifyCodeViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\AddPhoneNumberViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\ChangePasswordViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\ConfigureTwoFactorViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\FactorViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\IndexViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\ManageLoginsViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\RemoveLoginViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\SetPasswordViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Models\ManageViewModels\VerifyPhoneNumberViewModel.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Services\IEmailSender.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Services\ISmsSender.cs
-C:\Users\Curt Arbtin\Documents\Visual Studio 2015\Projects\MySchool\src\MySchool\Services\MessageServices.cs
+--resource:"C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\obj\Debug\netcoreapp1.0\MySchooldotnet-compile.deps.json",MySchool.deps.json
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Program.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Startup.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Controllers\AccountController.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Controllers\HomeController.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Controllers\ManageController.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Controllers\StudentController.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Data\ApplicationDbContext.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Data\Migrations\00000000000000_CreateIdentitySchema.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Data\Migrations\ApplicationDbContextModelSnapshot.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AcedemicClass.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ApplicationUser.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ClassLevel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\Grade.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\Student.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AccountViewModels\ForgotPasswordViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AccountViewModels\LoginViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AccountViewModels\RegisterViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AccountViewModels\ResetPasswordViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AccountViewModels\SendCodeViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\AccountViewModels\VerifyCodeViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\AddPhoneNumberViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\ChangePasswordViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\ConfigureTwoFactorViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\FactorViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\IndexViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\ManageLoginsViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\RemoveLoginViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\SetPasswordViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Models\ManageViewModels\VerifyPhoneNumberViewModel.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Services\IEmailSender.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Services\ISmsSender.cs
+C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Examples\MySchool\src\MySchool\Services\MessageServices.cs
