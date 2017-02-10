@@ -21,10 +21,24 @@ namespace Checkpoint1.Controllers
         }
 
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Index(int? courseFilter = 0)
         {
+            var crs = db_context.Course.OrderBy(c => c.Label).Select(c => new { id = c.Id, value = c.Label }).ToList();
+            ViewBag.CourseSelectList = new SelectList(crs, "id", "value");
 
-            var students = db_context.Student.Include(a => a.Course);
+            IQueryable<Student> students;
+
+            var s_all = db_context.Student.Include(a => a.Course);
+
+            if(courseFilter > 0)
+            {
+                students = s_all.Where(s => s.CourseId == courseFilter);
+            }
+            else
+            {
+                // do nothing, all
+                students = s_all.Select(s => s);
+            }
 
             return View(students.ToList());
         }
@@ -46,6 +60,14 @@ namespace Checkpoint1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Student student)
         {
+            if(!ModelState.IsValid)
+            {
+                var crs = db_context.Course.OrderBy(c => c.Label).Select(c => new { id = c.Id, value = c.Label }).ToList();
+                ViewBag.CourseSelectList = new SelectList(crs, "id", "value");
+
+                return View("Create", student);
+            }
+
             db_context.Student.Add(student);
             db_context.SaveChanges();
 
