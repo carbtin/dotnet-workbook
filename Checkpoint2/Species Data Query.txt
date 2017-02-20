@@ -1,0 +1,35 @@
+URL to run query
+
+http://ecos.fws.gov/ecp/species-query
+
+for $item in /SPECIES_DETAIL
+                where
+                $item/STATUS eq "E" or
+                $item/STATUS eq "T"
+                return
+                <SPECIES>{
+$item/ENTITY_ID,
+$item/SCINAME,
+$item/COMNAME,
+$item/STATUS,
+$item/STATUS_TEXT,
+$item/SPCODE,
+$item/VIPCODE,
+$item/POP_ABBREV,
+$item/POP_DESC,
+$item/TSN,
+$item/COUNTRY,
+$item/LISTING_DATE}
+</SPECIES>
+
+
+
+Other Fields
+
+<INVNAME>
+<FAMILY>
+<STATUS>
+<STATUS_TEXT>
+<LEAD_AGENCY>
+<LEAD_REGION>
+<DPS>
