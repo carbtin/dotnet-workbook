@@ -1,0 +1,40 @@
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/migrations
+
+Use the help when your not sure the commands
+
+dotnet ef -h
+
+So
+
+  dotnet ef migrations, database, dbcontext
+
+:To see your Migrations and Contexts for your project
+-NOTE: make sure your in the root directory of your project
+
+  dotnet ef migrations list
+  dotnet ef dbcontext list
+
+:To create a new migration	
+-You must have your context created first:
+
+-Examples: NOTE: Specify the context used for the initial migration
+
+  dotnet ef migrations add InitialCreate -c ApplicationDbContext
+
+  dotnet ef migrations add EsCreate -c EsDbContext
+
+:When you make a model change, create a new migration
+-I made a change to my Species model
+  dotnet ef migrations add SpeciesUpdate1 -c EsDbContext
+
+:How to update the database
+
+  dotnet ef database update migration_name_from_list -c context_name
+
+NOTES:
+-comment out OnModelCreating in Context file
+
+-Check the _migration table : if its missing data remove the models table and run below,
+-the migration table must list a history! If you are running into errors check the _migration table
+
+ dotnet ef database update -c EsDbContext <-not specifiying a migration runs all the migrations in order
