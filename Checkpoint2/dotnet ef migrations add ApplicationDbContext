@@ -1,0 +1,32 @@
+dotnet ef migrations add ApplicationDbContext
+
+dotnet ef migrations add ApplicationContext
+
+dotnet ef database update
+
+
+dotnet ef database drop -c aspnet-EndangeredSpecies-eac92d27-c4d3-490e-b2b1-b66fb09a7b4e
+
+
+
+
+THIS PROCESS WORKS
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/migrations
+
+dotnet ef migrations add InitialCreate -c ApplicationDbContext
+
+dotnet ef migrations add EsCreate -c EsDbContext
+
+
+Run site and allow migrations
+
+dotnet ef migrations add SpeciesUpdate1 -c EsDbContext
+
+comment out OnModelCreating in Context file
+
+Check the _migration table : if it missing remove the model table and run below,
+the migration table must list a history!
+dotnet ef database update -c EsDbContext <-not specifiying a migration runs all
+
+
+dotnet ef database update SpeciesUpdate1 -c EsDbContext
