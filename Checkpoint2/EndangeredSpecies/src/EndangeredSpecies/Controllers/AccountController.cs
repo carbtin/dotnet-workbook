@@ -12,6 +12,7 @@ using EndangeredSpecies.Models;
 using EndangeredSpecies.Models.AccountViewModels;
 using EndangeredSpecies.Services;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using EndangeredSpecies.Data;
 
 namespace EndangeredSpecies.Controllers
 {
@@ -24,18 +25,22 @@ namespace EndangeredSpecies.Controllers
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
 
+        private ApplicationDbContext db_context;
+        
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            db_context = context;
         }
 
         //
@@ -100,6 +105,7 @@ namespace EndangeredSpecies.Controllers
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
+            ViewBag.Role = new SelectList(db_context.Roles.ToList(), "Name", "Name");
             return View();
         }
 
@@ -117,6 +123,9 @@ namespace EndangeredSpecies.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // Set selected Role
+                    await _userManager.AddToRoleAsync(user, model.Role);
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
                     // Send an email with this link
                     //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -129,7 +138,7 @@ namespace EndangeredSpecies.Controllers
                 }
                 AddErrors(result);
             }
-
+            ViewBag.Role = new SelectList(db_context.Roles.ToList(), "Name", "Name");
             // If we got this far, something failed, redisplay form
             return View(model);
         }
