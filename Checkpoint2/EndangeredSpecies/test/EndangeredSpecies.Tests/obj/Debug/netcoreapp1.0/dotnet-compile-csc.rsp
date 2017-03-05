@@ -8,8 +8,8 @@
 -debug:full
 -nostdlib
 -nologo
-"C:\Users\Curt Arbtin\documents\visual studio 2015\Projects\EndangeredSpecies\test\EndangeredSpecies.Tests\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\Curt Arbtin\documents\visual studio 2015\Projects\EndangeredSpecies\test\EndangeredSpecies.Tests\bin\Debug\netcoreapp1.0\EndangeredSpecies.Tests.dll"
+"C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Checkpoint2\EndangeredSpecies\test\EndangeredSpecies.Tests\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Checkpoint2\EndangeredSpecies\test\EndangeredSpecies.Tests\bin\Debug\netcoreapp1.0\EndangeredSpecies.Tests.dll"
 -r:"C:\Users\Curt Arbtin\.nuget\packages\Castle.Core\4.0.0-beta001\lib\netstandard1.3\Castle.Core.dll"
 -r:"C:\Users\Curt Arbtin\.nuget\packages\dotnet-test-xunit\2.2.0-preview2-build1029\lib\netcoreapp1.0\dotnet-test-xunit.dll"
 -r:"C:\Users\Curt Arbtin\.nuget\packages\Microsoft.ApplicationInsights\2.1.0\lib\dotnet5.4\Microsoft.ApplicationInsights.dll"
@@ -211,6 +211,6 @@
 -r:"C:\Users\Curt Arbtin\.nuget\packages\xunit.extensibility.execution\2.1.0\lib\dotnet\xunit.execution.dotnet.dll"
 -r:"C:\Users\Curt Arbtin\.nuget\packages\xunit.runner.reporters\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.reporters.dotnet.dll"
 -r:"C:\Users\Curt Arbtin\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll"
--r:"C:\Users\Curt Arbtin\documents\visual studio 2015\Projects\EndangeredSpecies\src\EndangeredSpecies\bin\Debug\netcoreapp1.0\EndangeredSpecies.dll"
-"C:\Users\Curt Arbtin\documents\visual studio 2015\Projects\EndangeredSpecies\test\EndangeredSpecies.Tests\Class1.cs"
-"C:\Users\Curt Arbtin\documents\visual studio 2015\Projects\EndangeredSpecies\test\EndangeredSpecies.Tests\Properties\AssemblyInfo.cs"
+-r:"C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Checkpoint2\EndangeredSpecies\src\EndangeredSpecies\bin\Debug\netcoreapp1.0\EndangeredSpecies.dll"
+"C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Checkpoint2\EndangeredSpecies\test\EndangeredSpecies.Tests\Class1.cs"
+"C:\Users\Curt Arbtin\Documents\GitHub\carbtin\dotnet-workbook\Checkpoint2\EndangeredSpecies\test\EndangeredSpecies.Tests\Properties\AssemblyInfo.cs"

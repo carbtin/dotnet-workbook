@@ -35,7 +35,12 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="Species" asp-action="Index">Species</a></li>
+                    <li><a asp-area="" asp-controller="Carts" asp-action="Index" asp-route-type="donation">Donations</a></li>
+@if (User.Identity.IsAuthenticated == true && User.IsInRole("Admin"))
+{
                     <li><a asp-area="" asp-controller="ManageRoles" asp-action="Index">Manage Roles</a></li>
+                    <li><a asp-area="" asp-controller="ManageUsers" asp-action="Index">Manage Users</a></li>
+}
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

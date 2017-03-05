@@ -9,7 +9,7 @@ namespace EndangeredSpecies.Data
 
         public EsDbContext(DbContextOptions<EsDbContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         public DbSet<Species> Species { get; set; } //set to public to access

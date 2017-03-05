@@ -9,6 +9,7 @@ using EndangeredSpecies.Data;
 using EndangeredSpecies.Models;
 using EndangeredSpecies.ViewModels;
 
+
 namespace EndangeredSpecies.Controllers
 {
     public class SpeciesController : Controller
@@ -38,7 +39,7 @@ namespace EndangeredSpecies.Controllers
 
             //IQueryable<Species> species;
             IQueryable<SpeciesViewModel> speciesVM;
-
+            
             var species_all = db_context.Species.Select(s => new SpeciesViewModel()
             {
                 Id = s.Id,
@@ -60,6 +61,10 @@ namespace EndangeredSpecies.Controllers
             if (statuscodeFilter > 0)
             {
                 speciesVM = species_all.Where(s => s.StatusCodeId == statuscodeFilter);
+            }
+            else if (countrycodeFilter > 0)
+            {
+                speciesVM = species_all.Where(s => s.CountryCodeId == countrycodeFilter);
             }
             else
             {

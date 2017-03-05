@@ -8,9 +8,10 @@ using EndangeredSpecies.Data;
 namespace EndangeredSpecies.Migrations.EsDb
 {
     [DbContext(typeof(EsDbContext))]
-    partial class EsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170302034909_AddCartFKey")]
+    partial class AddCartFKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -61,8 +62,6 @@ namespace EndangeredSpecies.Migrations.EsDb
                         .IsRequired();
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SpeciesId");
 
                     b.ToTable("Donation");
                 });
@@ -120,14 +119,6 @@ namespace EndangeredSpecies.Migrations.EsDb
                 {
                     b.HasOne("EndangeredSpecies.Models.Species", "Species")
                         .WithMany("Cart")
-                        .HasForeignKey("SpeciesId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("EndangeredSpecies.Models.Donation", b =>
-                {
-                    b.HasOne("EndangeredSpecies.Models.Species", "Species")
-                        .WithMany()
                         .HasForeignKey("SpeciesId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

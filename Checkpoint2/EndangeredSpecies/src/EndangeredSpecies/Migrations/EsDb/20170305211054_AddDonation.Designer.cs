@@ -8,9 +8,10 @@ using EndangeredSpecies.Data;
 namespace EndangeredSpecies.Migrations.EsDb
 {
     [DbContext(typeof(EsDbContext))]
-    partial class EsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170305211054_AddDonation")]
+    partial class AddDonation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

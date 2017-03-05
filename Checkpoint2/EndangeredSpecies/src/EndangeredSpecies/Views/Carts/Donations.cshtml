@@ -1,10 +1,10 @@
-@model IEnumerable<EndangeredSpecies.ViewModels.CartDonationViewModel>
+@model IEnumerable<EndangeredSpecies.Models.Cart>
 
 @{
-    //ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index";
 }
 
-<h2>My @ViewBag.Title</h2>
+<h2>My Cart</h2>
 
 <p class="hidden">
     <a asp-action="Create">Your Cart</a>
@@ -14,10 +14,7 @@
         <tr>
             <th>Common Name</th>
             <th>@Html.DisplayNameFor(model => model.Amount)</th>
-            @if (ViewBag.Type == "cart")
-            {
             <th></th>
-            }
         </tr>
     </thead>
     <tbody>
@@ -25,12 +22,7 @@
         {
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Species.ComName)</td>
-                <td id="editAmt_@item.Id"> @Html.DisplayFor(modelItem => item.Amount)
-                @if (ViewBag.Type == "cart")
-                {
-                    <input id="@item.Id" class="btnAmt btn btn-info btn-control" type="button" value="Change" onclick="" />
-                }
-                </td>
+                <td id="editAmt_@item.Id">@Html.DisplayFor(modelItem => item.Amount) <input id="@item.Id" class="btnAmt btn btn-info btn-control" type="button" value="Change" onclick="" /></td>
                 <td style="display:none;" id="amntEdit_@item.Id">
                     <form method="post" action="@Url.Action("EditAmount", "Carts")">
                         <input type="hidden" value="@item.Id" id="Id" name="Id" />
@@ -38,26 +30,20 @@
                         <input class="btn btn-success btn-control" type="submit" value="Save" />
                     </form>
                 </td>
-                @if (ViewBag.Type == "cart")
-                {
                 <td>
                     <a asp-action="Delete" asp-route-id="@item.Id">Remove</a>
                 </td>
-                }
             </tr>
         }
         <tr>
-    <td>
-        @ViewBag.Title Total
-    </td>
-    <td>
-        @ViewBag.AmountTotal
-    </td>
-    @if (ViewBag.Type == "cart")
-    {
-        <td><a asp-action="Donate" asp-controller="Carts">Donate Now</a></td>
-    }
-    </tr>
+            <td>
+                Cart Total
+            </td>
+            <td>
+                @ViewBag.AmountTotal
+            </td>
+            <td></td>
+        </tr>
     </tbody>
 </table>
 

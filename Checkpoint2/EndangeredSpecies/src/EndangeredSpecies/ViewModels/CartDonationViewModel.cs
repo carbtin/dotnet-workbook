@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EndangeredSpecies.Models;
+using System.ComponentModel.DataAnnotations;
 
-namespace EndangeredSpecies.Models
+namespace EndangeredSpecies.ViewModels
 {
-    public class Cart
+    public class CartDonationViewModel
     {
         [Key]
         public int Id { get; set; }

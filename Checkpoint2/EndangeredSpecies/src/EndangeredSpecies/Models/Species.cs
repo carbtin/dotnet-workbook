@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace EndangeredSpecies.Models
@@ -21,5 +22,7 @@ namespace EndangeredSpecies.Models
 
         public virtual StatusCode StatusCode { get; set; }
         public virtual CountryCode CountryCode { get; set; }
+
+        public virtual ICollection<Cart> Cart { get; set; }
     }
 }

@@ -8,9 +8,13 @@
     ViewData["Title"] = "Index";
     SelectList cclist = ViewBag.CountryCodeSelectList;
     SelectList sclist = ViewBag.StatusCodeSelectList;
+
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
 }
 
 <hr/>
+
 <table class="table">
     <thead>
         <tr>
@@ -52,42 +56,49 @@
             </th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model)
+@if (Model.Any())
 {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ComName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SciName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StatusCodeLabel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CountryCodeLabel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ListingDate)
-        </td>
-        <td>
-            <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
-            @if (User.Identity.IsAuthenticated == true && User.IsInRole("Admin"))
-            {
-               <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
-               <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            }
-        </td>
-    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ComName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SciName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusCodeLabel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryCodeLabel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ListingDate)
+                </td>
+                <td>
+                    <a asp-action="AddToCart" asp-controller="Carts" asp-route-id="@item.Id"><span class="glyphicon glyphicon-shopping-cart" style="font-size:2rem; color:#aaa;"></span></a>
+                    <a class="btn btn-info btn-control" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (User.Identity.IsAuthenticated == true && User.IsInRole("Admin"))
+                    {
+                        <a class="btn btn-warning btn-control" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-danger btn-control" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
 }
-</tbody>
+else
+{
+    <tbody>
+        <tr>
+            <td>No Results found</td>
+        </tr>
+    </tbody>
+}
 </table>
-
-@{
-    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-}
 <div class="center-block">
     <a asp-action="Index"
        asp-route-sortOrder="@ViewData["CurrentSort"]"
