@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Collections;
 using EndangeredSpecies.ViewModels;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
+using EndangeredSpecies.Infrastructure;
 
 namespace EndangeredSpecies.Controllers
 {
@@ -245,6 +248,19 @@ namespace EndangeredSpecies.Controllers
             }
         }
 
+        public RedirectToActionResult AddToCart(int Id, string returnUrl)
+        {
+            Species species = repository.Species.FirstOrDefault(s => s.Id == Id);
+
+            if (species != null)
+            {
+                CartList cartlist = GetCart();
+                cartlist.AddItem(species);
+                SaveCart(cartlist);
+            }
+            return RedirectToAction("Index", new { returnUrl });
+        }
+
         [Authorize(Roles = "User,Admin")]
         public async Task<IActionResult> EditAmount(int Id, decimal Amount)
         {
@@ -259,6 +275,48 @@ namespace EndangeredSpecies.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+
+        // New methods
+        private ISpeciesRepository repository;
+
+        public CartsController(ISpeciesRepository repo)
+        {
+            repository = repo;
+        }
+
+        //public ViewResult Index(string returnUrl)
+        //{
+        //    return View(new CartIndexViewModel
+        //    {
+        //        Cart = GetCart(),
+        //        ReturnUrl = returnUrl
+        //    });
+        //}
+        
+        public RedirectToActionResult RemoveFromCart(int Id, string returnUrl)
+        {
+            Species species = repository.Species.FirstOrDefault(p => p.Id == Id);
+
+            if (species != null)
+            {
+                CartList cartlist = GetCart();
+                cartlist.RemoveItem(species);
+                SaveCart(cartlist);
+            }
+            return RedirectToAction("Index", new { returnUrl });
+        }
+
+        private CartList GetCart()
+        {
+            CartList cartlist = HttpContext.Session.GetJson<CartList>("CartList") ?? new CartList();
+            return cartlist;
+        }
+
+        private void SaveCart(CartList cartlist)
+        {
+            HttpContext.Session.SetJson("CartList", cartlist);
         }
     }
 }

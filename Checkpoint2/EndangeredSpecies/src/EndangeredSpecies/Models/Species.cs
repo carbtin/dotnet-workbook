@@ -4,6 +4,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EndangeredSpecies.Models
 {
+    public interface ISpeciesRepository
+    {
+        IEnumerable<Species> Species { get; }
+    }
+
     public class Species
     {
         [Key]

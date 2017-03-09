@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using EndangeredSpecies.Data;
 using EndangeredSpecies.Models;
 using EndangeredSpecies.Services;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Http;
 
 namespace EndangeredSpecies
 {
@@ -56,11 +58,15 @@ namespace EndangeredSpecies
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+            services.AddSession();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<CartService>();
+
+            services.AddScoped<CartList>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,6 +95,7 @@ namespace EndangeredSpecies
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

@@ -1,7 +1,35 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace EndangeredSpecies.Models
 {
+    public class CartList
+    {
+        private List<Cart> cartCollection = new List<Cart>();
+
+        public virtual void AddItem(Species species)
+        {
+            Cart cart = cartCollection.Where(s => s.Species.Id == species.Id).FirstOrDefault();
+
+            if (cart == null)
+            {
+                cartCollection.Add(new Cart
+                {
+                    Species = species
+                });
+            }
+        }
+
+        public virtual void RemoveItem(Species species) => cartCollection.RemoveAll(l => l.Species.Id == species.Id);
+
+        public virtual decimal ComputeTotalValue() => cartCollection.Sum(e => e.Amount);
+
+        public virtual void Clear() => cartCollection.Clear();
+
+        public virtual IEnumerable<Cart> Carts => cartCollection;
+    }
+
     public class Cart
     {
         [Key]
